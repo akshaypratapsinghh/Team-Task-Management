@@ -1,1 +1,1 @@
-web: npm install && npm install --prefix backend && npm install --prefix frontend && node server.js
+web: npm run install:backend && npm run install:frontend && node server.js
