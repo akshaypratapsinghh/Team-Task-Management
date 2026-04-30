@@ -19,6 +19,20 @@ process.on('exit', (code) => {
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  return res.json({
+    name: 'Team Task Management API',
+    version: '1.0.0',
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      projects: '/api/projects',
+      tasks: '/api/tasks'
+    }
+  });
+});
+
 app.get('/api/health', (req, res) => {
   return res.json({ status: 'ok', time: new Date().toISOString() });
 });
